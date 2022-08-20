@@ -22,13 +22,14 @@ String UDPLib::read() {
   char x[512] = "";
   if (wifiUdp.parsePacket()) {
     for (int i = 0; i < 512; i++) {
-      char v = wifiUdp.read();
+      int v = wifiUdp.read();
       if (v == -1) {
-        x[i] == '\0';
+        x[i] = '\0';
         break;
       }
       x[i] = v;
     }
   }
-  return String(x);
+  String r=x;
+  return r;
 }

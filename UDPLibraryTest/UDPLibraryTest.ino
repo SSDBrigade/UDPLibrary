@@ -13,6 +13,7 @@ void setup() {
     delay(500);
   }
   Serial.println("connected "+String(ssid));
+  Serial.println(WiFi.localIP());
   _udp.begin("192.168.0.32",9000,9001);
 }
 
